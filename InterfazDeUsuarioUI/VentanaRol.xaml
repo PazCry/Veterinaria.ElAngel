@@ -94,14 +94,15 @@ MouseDown="Window_MouseDown">
          Margin="42,0,0,0" Grid.ColumnSpan="3"/>
 
             </Grid>
-            <Label Content="Label" HorizontalAlignment="Left" Margin="10,-20,0,0" VerticalAlignment="Top"/>
-            <Label Content="Label" HorizontalAlignment="Left" Margin="50,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="56"/>
-            <TextBox HorizontalAlignment="Left" Margin="50,41,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="148" Height="25"/>
-            <Label Content="Label" HorizontalAlignment="Left" Margin="50,86,0,0" Grid.Row="1" VerticalAlignment="Top" Width="56"/>
-            <TextBox HorizontalAlignment="Left" Margin="50,117,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="148" Height="25"/>
-            <Button Content="Button" HorizontalAlignment="Left" Margin="449,23,0,0" Grid.Row="1" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="30" Width="103"/>
-            <Button Content="Button" HorizontalAlignment="Left" Margin="449,86,0,0" Grid.Row="1" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="30" Width="103"/>
-            <Button Content="Button" HorizontalAlignment="Left" Margin="449,154,0,0" Grid.Row="1" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="30" Width="103"/>
+            <Label Content="ROL" HorizontalAlignment="Left" Margin="10,-20,0,0" VerticalAlignment="Top"/>
+            <Label Content="Nombre de Rol" HorizontalAlignment="Left" Margin="50,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="96"/>
+            <TextBox HorizontalAlignment="Left" Margin="50,41,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="148" Height="25"/>
+            <Label Content="Numero del Rol" HorizontalAlignment="Left" Margin="50,86,0,0" Grid.Row="1" VerticalAlignment="Top" Width="117"/>
+            <TextBox HorizontalAlignment="Left" Margin="50,117,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="148" Height="25"/>
+            <Button x:Name="btnGuardar" Content="Guardar" HorizontalAlignment="Left" Margin="449,23,0,0" Grid.Row="1" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="30" Width="103"/>
+            <Button x:Name="btnModificar" Content="Modificar" HorizontalAlignment="Left" Margin="449,86,0,0" Grid.Row="1" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="30" Width="103"/>
+            <Button x:Name="btnEliminar" Content="Eliminar"  HorizontalAlignment="Left" Margin="449,154,0,0" Grid.Row="1" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="30" Width="103"/>
+            <DataGrid x:Name="listarRol" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="78,232,76,43" Grid.ColumnSpan="2"/>
         </Grid>
     </Border>
 
