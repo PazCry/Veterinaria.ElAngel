@@ -9,6 +9,10 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <PackageReference Include="MahApps.Metro" Version="2.4.10" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<ProjectReference Include="..\EntidadDeNegocioEN\EntidadDeNegocioEN.csproj" />
 		<ProjectReference Include="..\LogicaDeAccesoADatosDAL\LogicaDeAccesoADatosDAL.csproj" />
 		<ProjectReference Include="..\LogicaDeNegocioBL\LogicaDeNegocioBL.csproj" />
