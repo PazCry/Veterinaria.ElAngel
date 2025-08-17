@@ -33,60 +33,16 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Calendar}">
-                        <StackPanel x:Name="PART_Root" Width="771">
-                            <CalendarItem
-                    Style="{TemplateBinding CalendarItemStyle}" x:Name="PART_CalendarItem" BorderThickness="{TemplateBinding BorderThickness}" Height="404" Background="#FFF9B8D9" BorderBrush="Black" Foreground="White"/>
-                        </StackPanel>
-                        <StackPanel x:Name="PART_Root" Width="759">
-                            <CalendarItem
-                    Style="{TemplateBinding CalendarItemStyle}" x:Name="PART_CalendarItem" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}"/>
-                        </StackPanel>
-                        <StackPanel x:Name="PART_Root" Width="754">
-                            <CalendarItem
-                    Style="{TemplateBinding CalendarItemStyle}" x:Name="PART_CalendarItem" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}"/>
-                        </StackPanel>
-                        <StackPanel x:Name="PART_Root" Width="763">
-                            <CalendarItem
-                    Style="{TemplateBinding CalendarItemStyle}" x:Name="PART_CalendarItem" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}"/>
-                        </StackPanel>
-                        <StackPanel x:Name="PART_Root" Width="780">
-                            <CalendarItem
-                    Style="{TemplateBinding CalendarItemStyle}" x:Name="PART_CalendarItem" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}"/>
-                        </StackPanel>
-                        <StackPanel x:Name="PART_Root" Width="784">
-                            <CalendarItem
-                    Style="{TemplateBinding CalendarItemStyle}" x:Name="PART_CalendarItem" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}"/>
-                        </StackPanel>
-                        <StackPanel x:Name="PART_Root" Width="763">
-                            <CalendarItem
-                    Style="{TemplateBinding CalendarItemStyle}" x:Name="PART_CalendarItem" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}"/>
-                        </StackPanel>
-                        <StackPanel x:Name="PART_Root" Width="759">
-                            <CalendarItem
-                    Style="{TemplateBinding CalendarItemStyle}" x:Name="PART_CalendarItem" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}"/>
-                        </StackPanel>
-                        <StackPanel x:Name="PART_Root" Width="725">
-                            <CalendarItem
-                    Style="{TemplateBinding CalendarItemStyle}" x:Name="PART_CalendarItem" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}"/>
-                        </StackPanel>
-                        <StackPanel x:Name="PART_Root" Width="721">
-                            <CalendarItem
-                    Style="{TemplateBinding CalendarItemStyle}" x:Name="PART_CalendarItem" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}"/>
-                        </StackPanel>
-                        <StackPanel x:Name="PART_Root" Width="688">
-                            <CalendarItem
-                    Style="{TemplateBinding CalendarItemStyle}" x:Name="PART_CalendarItem" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}"/>
-                        </StackPanel>
-                        <StackPanel x:Name="PART_Root" Width="675">
-                            <CalendarItem
-                    Style="{TemplateBinding CalendarItemStyle}" x:Name="PART_CalendarItem" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}"/>
-                        </StackPanel>
-                        <StackPanel x:Name="PART_Root" Width="642">
-                            <CalendarItem
-                    Style="{TemplateBinding CalendarItemStyle}" x:Name="PART_CalendarItem" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}"/>
-                        </StackPanel>
-                        <StackPanel x:Name="PART_Root" Width="538">
-                            <CalendarItem x:Name="PART_CalendarItem" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Style="{TemplateBinding CalendarItemStyle}"/>
+                        <!-- ✅ UN SOLO StackPanel con nombre único -->
+                        <StackPanel x:Name="PART_Root">
+                            <!-- ✅ UN SOLO CalendarItem con nombre único -->
+                            <CalendarItem x:Name="PART_CalendarItem" 
+                                        Style="{TemplateBinding CalendarItemStyle}"
+                                        BorderThickness="{TemplateBinding BorderThickness}" 
+                                        BorderBrush="{TemplateBinding BorderBrush}" 
+                                        Background="#FFF9B8D9"
+                                        Foreground="White"
+                                        Height="404"/>
                         </StackPanel>
                     </ControlTemplate>
                 </Setter.Value>
@@ -94,7 +50,10 @@
         </Style>
     </Window.Resources>
     <Grid>
-        <Calendar Style="{DynamicResource CalendarStyle1}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="414" Width="780"/>
-
+        <Calendar Style="{DynamicResource CalendarStyle1}" 
+                  HorizontalAlignment="Center" 
+                  VerticalAlignment="Center" 
+                  Height="414" 
+                  Width="780"/>
     </Grid>
 </Window>
