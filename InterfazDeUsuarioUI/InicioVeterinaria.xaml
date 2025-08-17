@@ -5,5 +5,324 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:InterfazDeUsuarioUI"
         mc:Ignorable="d"
-        Title="InicioVeterinaria" Height="450" Width="800" > 
+        Title="InicioVeterinaria" Height="727" Width="800" >
+    <Window.Resources>
+
+        <!-- ========== COLORES Y BRUSHES ========== -->
+        <SolidColorBrush x:Key="SidebarBackground" Color="#2E3440"/>
+        <SolidColorBrush x:Key="SidebarItemNormal" Color="#4C566A"/>
+        <SolidColorBrush x:Key="SidebarItemHover" Color="#5E81AC"/>
+        <SolidColorBrush x:Key="SidebarItemSelected" Color="#88C0D0"/>
+        <SolidColorBrush x:Key="TextNormal" Color="#ECEFF4"/>
+        <SolidColorBrush x:Key="TextSelected" Color="#2E3440"/>
+        <SolidColorBrush x:Key="AccentColor" Color="#8FBCBB"/>
+
+        <!-- ========== ESTILO PARA BOTONES DEL SIDEBAR ========== -->
+        <Style x:Key="SidebarButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="{StaticResource TextNormal}"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="15,8"/>
+            <Setter Property="Margin" Value="0,1"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="FontWeight" Value="Medium"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                         BorderBrush="{TemplateBinding BorderBrush}"
+                         BorderThickness="{TemplateBinding BorderThickness}"
+                         CornerRadius="0,20,20,0"
+                         Margin="0,0,10,0">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                     VerticalAlignment="Center"
+                                     Margin="{TemplateBinding Padding}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <!-- Hover Effect -->
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="{StaticResource SidebarItemHover}"/>
+                            </Trigger>
+                            <!-- Focus Effect -->
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="Background" Value="{StaticResource SidebarItemSelected}"/>
+                                <Setter Property="Foreground" Value="{StaticResource TextSelected}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- ========== ESTILO PARA ICONOS ========== -->
+        <Style x:Key="SidebarIconStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Margin" Value="0,0,12,0"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Width" Value="22"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+        </Style>
+
+        <!-- ========== ESTILO PARA TEXTO DEL MENU ========== -->
+        <Style x:Key="SidebarTextStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="FontWeight" Value="Medium"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+
+        <!-- ========== ESTILO PARA SEPARADOR ========== -->
+        <Style x:Key="SidebarSeparatorStyle" TargetType="Rectangle">
+            <Setter Property="Fill" Value="#4C566A"/>
+            <Setter Property="Height" Value="1"/>
+            <Setter Property="Margin" Value="20,8"/>
+        </Style>
+
+        <!-- ========== ESTILO PARA TÍTULOS DE SECCIÓN ========== -->
+        <Style x:Key="SectionTitleStyle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="#81A1C1"/>
+            <Setter Property="FontSize" Value="11"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Margin" Value="20,10,0,5"/>
+            <Setter Property="Text" Value="{Binding}"/>
+        </Style>
+
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <!-- Sidebar -->
+            <ColumnDefinition Width="300"/>
+            <!-- Contenido Principal -->
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- ========== SIDEBAR IZQUIERDO ========== -->
+        <Border Grid.Column="0" Background="{StaticResource SidebarBackground}">
+            <!-- Efecto de sombra -->
+            <Border.Effect>
+                <DropShadowEffect Color="Black" BlurRadius="10" ShadowDepth="2" Opacity="0.3"/>
+            </Border.Effect>
+
+            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                <StackPanel Margin="0,15,0,20">
+
+                    <!-- ========== HEADER / LOGO ========== -->
+                    <StackPanel Orientation="Horizontal" Margin="20,0,0,25">
+                        <Border Background="{StaticResource AccentColor}" 
+                         Width="40" Height="40" 
+                         CornerRadius="20">
+                            <TextBlock Text="🐾" FontSize="20" 
+                              HorizontalAlignment="Center" 
+                              VerticalAlignment="Center"/>
+                        </Border>
+                        <StackPanel Margin="15,0,0,0" VerticalAlignment="Center">
+                            <TextBlock Text="El Ángel" 
+                              Foreground="{StaticResource TextNormal}"
+                              FontSize="18" 
+                              FontWeight="Bold" Width="177"/>
+                            <TextBlock Text="Sistema Veterinario" 
+                              Foreground="#81A1C1"
+                              FontSize="11"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <!-- ========== MENÚ PRINCIPAL ========== -->
+                    <StackPanel>
+
+                        <!-- SECCIÓN: PANEL PRINCIPAL -->
+                        <TextBlock Text="PANEL PRINCIPAL" Style="{StaticResource SectionTitleStyle}"/>
+
+                        <!-- Dashboard -->
+                        <Button Style="{StaticResource SidebarButtonStyle}" 
+                         Click="Dashboard_Click">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="📊" Style="{StaticResource SidebarIconStyle}"/>
+                                <TextBlock Text="Inicio" Style="{StaticResource SidebarTextStyle}"/>
+                            </StackPanel>
+                        </Button>
+
+                        <!-- Separador -->
+                        <Rectangle Style="{StaticResource SidebarSeparatorStyle}"/>
+
+                        <!-- SECCIÓN: GESTIÓN PRINCIPAL -->
+                        <TextBlock Text="GESTIÓN PRINCIPAL" Style="{StaticResource SectionTitleStyle}"/>
+
+                        <!-- Mascotas -->
+                        <Button Style="{StaticResource SidebarButtonStyle}"
+                         Click="Mascotas_Click">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="🐕" Style="{StaticResource SidebarIconStyle}"/>
+                                <TextBlock Text="Mascotas" Style="{StaticResource SidebarTextStyle}"/>
+                            </StackPanel>
+                        </Button>
+
+                        <!-- Clientes -->
+                        <Button Style="{StaticResource SidebarButtonStyle}"
+                         Click="Clientes_Click">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="👥" Style="{StaticResource SidebarIconStyle}"/>
+                                <TextBlock Text="Clientes" Style="{StaticResource SidebarTextStyle}"/>
+                            </StackPanel>
+                        </Button>
+
+                        <!-- Citas -->
+                        <Button Style="{StaticResource SidebarButtonStyle}"
+                         Click="Citas_Click">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="📅" Style="{StaticResource SidebarIconStyle}"/>
+                                <TextBlock Text="Citas" Style="{StaticResource SidebarTextStyle}"/>
+                            </StackPanel>
+                        </Button>
+
+                        <!-- Historial Médico / Expedientes -->
+                        <Button Style="{StaticResource SidebarButtonStyle}"
+                         Click="Historial_Click">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="📋" Style="{StaticResource SidebarIconStyle}"/>
+                                <TextBlock Text="Expedientes" Style="{StaticResource SidebarTextStyle}"/>
+                            </StackPanel>
+                        </Button>
+
+                        <!-- Separador -->
+                        <Rectangle Style="{StaticResource SidebarSeparatorStyle}"/>
+
+
+                        <!-- Especies -->
+                        <Button Style="{StaticResource SidebarButtonStyle}"
+                         Click="Especies_Click">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="🦎" Style="{StaticResource SidebarIconStyle}"/>
+                                <TextBlock Text="Especies" Style="{StaticResource SidebarTextStyle}"/>
+                            </StackPanel>
+                        </Button>
+
+                        <!-- Razas -->
+                        <Button Style="{StaticResource SidebarButtonStyle}"
+                         Click="Razas_Click">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="🐕‍🦺" Style="{StaticResource SidebarIconStyle}"/>
+                                <TextBlock Text="Razas" Style="{StaticResource SidebarTextStyle}"/>
+                            </StackPanel>
+                        </Button>
+
+                        <!-- Géneros -->
+                        <Button Style="{StaticResource SidebarButtonStyle}"
+                         Click="Generos_Click">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="⚥" Style="{StaticResource SidebarIconStyle}"/>
+                                <TextBlock Text="Géneros" Style="{StaticResource SidebarTextStyle}"/>
+                            </StackPanel>
+                        </Button>
+
+                    </StackPanel>
+
+                    <!-- ========== FOOTER DEL SIDEBAR ========== -->
+                    <StackPanel Margin="20,30,20,0">
+                        <Rectangle Style="{StaticResource SidebarSeparatorStyle}"/>
+
+                        <!-- Usuario actual -->
+                        <StackPanel Orientation="Horizontal" Margin="0,15,0,0">
+                            <Border Background="#5E81AC" 
+                             Width="35" Height="35" 
+                             CornerRadius="17.5">
+                                <TextBlock Text="👨‍💼" FontSize="16" 
+                                  HorizontalAlignment="Center" 
+                                  VerticalAlignment="Center"/>
+                            </Border>
+                            <StackPanel Margin="10,0,0,0" VerticalAlignment="Center">
+                                <TextBlock Text="Administrador" 
+                                  Foreground="{StaticResource TextNormal}"
+                                  FontSize="13" 
+                                  FontWeight="Medium"/>
+                                <TextBlock Text="Sesión Activa" 
+                                  Foreground="#81A1C1"
+                                  FontSize="10"/>
+                            </StackPanel>
+                        </StackPanel>
+
+                        <!-- Cerrar Sesión -->
+                        <Button Style="{StaticResource SidebarButtonStyle}"
+                         Click="CerrarSesion_Click"
+                         Margin="0,15,0,0">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="🚪" Style="{StaticResource SidebarIconStyle}"/>
+                                <TextBlock Text="Cerrar Sesión" Style="{StaticResource SidebarTextStyle}"/>
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
+
+                </StackPanel>
+            </ScrollViewer>
+        </Border>
+
+        <!-- ========== CONTENIDO PRINCIPAL ========== -->
+        <Grid Grid.Column="1" Background="#F8F9FA">
+
+            <!-- Header del contenido -->
+            <Border Background="White" 
+             Height="60" 
+             VerticalAlignment="Top"
+             BorderBrush="#E9ECEF" 
+             BorderThickness="0,0,0,1">
+                <Border.Effect>
+                    <DropShadowEffect Color="Gray" BlurRadius="5" ShadowDepth="1" Opacity="0.2"/>
+                </Border.Effect>
+
+                <Grid Margin="30,0">
+                    <StackPanel Orientation="Horizontal" 
+                        VerticalAlignment="Center">
+                        <TextBlock x:Name="PageTitle" 
+                          Text="📊 Panel Principal - Veterinario" 
+                          FontSize="22" 
+                          FontWeight="Bold" 
+                          Foreground="#2E3440"
+                          VerticalAlignment="Center"/>
+                    </StackPanel>
+
+                    <!-- Controles de ventana -->
+                    <StackPanel Orientation="Horizontal" 
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"/>
+                </Grid>
+            </Border>
+
+            <!-- Contenido dinámico -->
+            <Border Margin="30,80,30,30" 
+             Background="White" 
+             CornerRadius="10"
+             BorderBrush="#E9ECEF" 
+             BorderThickness="1">
+                <Border.Effect>
+                    <DropShadowEffect Color="Gray" BlurRadius="5" ShadowDepth="2" Opacity="0.1"/>
+                </Border.Effect>
+
+                <Grid x:Name="MainContent">
+                    <!-- Aquí va el contenido dinámico -->
+                    <StackPanel HorizontalAlignment="Center" 
+                        VerticalAlignment="Center">
+
+                        <!-- Cards de estadísticas -->
+                        <StackPanel Orientation="Horizontal" 
+                            Margin="0,20,0,0">
+
+                            <!-- Card 1 -->
+
+                            <!-- Card 2 -->
+
+                            <!-- Card 3 -->
+
+                            <!-- Card 4 -->
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </Grid>
+
+    </Grid>
+
 </Window>
