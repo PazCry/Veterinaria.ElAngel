@@ -5,8 +5,156 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:InterfazDeUsuarioUI"
         mc:Ignorable="d"
-        Title="VentanaMascota" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="VentanaMascota" Height="450" Width="800"                WindowStyle="None"
+Background="Transparent"
+AllowsTransparency="True"
+ResizeMode="NoResize"
+MouseDown="Window_MouseDown">
+
+    <Border CornerRadius="8 8 0 0"
+     BorderThickness="5 16 5 5"
+     RenderTransformOrigin="0.503,0.525">
+        <Border.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <LinearGradientBrush.RelativeTransform>
+                    <TransformGroup>
+                        <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                        <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                        <RotateTransform Angle="-29.932" CenterX="0.5" CenterY="0.5"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </LinearGradientBrush.RelativeTransform>
+                <GradientStop Color="White" Offset="0.662"/>
+            </LinearGradientBrush>
+        </Border.Background>
+
+        <Border.BorderBrush>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#FFBDF6" Offset="0"/>
+            </LinearGradientBrush>
+        </Border.BorderBrush>
+        <Grid Margin="0,1,0,-1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="353*"/>
+
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="293*"/>
+                <RowDefinition Height="106*"/>
+            </Grid.RowDefinitions>
+            <Grid Margin="0,-15,0,29" Grid.ColumnSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="624*"/>
+                    <ColumnDefinition Width="0*"/>
+                    <ColumnDefinition Width="0*"/>
+                    <ColumnDefinition Width="47*"/>
+                    <ColumnDefinition Width="48"/>
+                    <ColumnDefinition Width="0"/>
+                    <ColumnDefinition Width="41"/>
+                    <ColumnDefinition Width="0"/>
+                    <ColumnDefinition Width="36"/>
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="btnMinimize"
+      Background="Transparent"
+      BorderThickness="0"
+      Content="-"
+      Foreground= "Black"
+      FontSize="30"
+      FontFamily="Montserrat"
+      Cursor="Hand"
+      Grid.Column="4"
+      Click="btnMinimize_Click"
+      HorizontalAlignment="Left" Width="47" Margin="10,-12,0,-12" Grid.ColumnSpan="3"/>
+
+
+
+                <Button x:Name="btnClose"
+      Background= "Transparent"
+      BorderThickness="0"
+      Content="X"
+      Foreground= "Black"
+      FontSize="12"
+      FontFamily="Montserrat"
+      Cursor="Hand"
+      Grid.Column="6"
+      Click="btnClose_Click" Margin="33,0,4,0" Grid.ColumnSpan="3"/>
+
+                <Button x:Name="btnMaximize"
+        Background="Transparent"
+        BorderThickness="0"
+        Content="⬜"
+        Foreground="Black"
+        FontSize="12"
+        FontFamily="Montserrat"
+        Cursor="Hand"
+        Grid.Column="4"
+        Click="btnMaximize_Click"
+        Margin="42,0,0,0" Grid.ColumnSpan="3"/>
+
+            </Grid>
+            <Label Content="Mascota" HorizontalAlignment="Left" Margin="10,-20,0,0" VerticalAlignment="Top"/>
+            <TextBox Margin="74,33,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" BorderBrush="Black" Background="{x:Null}" HorizontalAlignment="Left" Width="160"/>
+            <TextBox Margin="74,93,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" BorderBrush="Black" Background="{x:Null}" HorizontalAlignment="Left" Width="160"/>
+            <Label Content="Nombre" HorizontalAlignment="Left" Margin="80,2,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+            <Label Content="Color" HorizontalAlignment="Left" Margin="80,62,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+            <DatePicker Margin="74,152,0,0" Grid.Row="1" VerticalAlignment="Top" SelectedDateFormat="Short" IsTodayHighlighted="True" DisplayDateStart="2025-08-15" IsDropDownOpen="True" HorizontalAlignment="Left" Width="160"/>
+            <Label Content="Fecha de Atencion" HorizontalAlignment="Left" Margin="80,121,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+            <ComboBox Margin="315,29,0,0" Grid.Row="1" VerticalAlignment="Top" BorderBrush="Black" Background="{x:Null}" HorizontalAlignment="Left" Width="160"/>
+            <DataGrid Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,201,4,0" Grid.ColumnSpan="2" Grid.RowSpan="2" IsSynchronizedWithCurrentItem="True">
+                <DataGrid.Effect>
+                    <DropShadowEffect/>
+                </DataGrid.Effect>
+            </DataGrid>
+            <ComboBox Margin="315,89,0,0" Grid.Row="1" VerticalAlignment="Top" BorderBrush="Black" Background="{x:Null}" HorizontalAlignment="Left" Width="160"/>
+            <ComboBox Margin="315,153,0,0" Grid.Row="1" VerticalAlignment="Top" BorderBrush="Black" Background="{x:Null}" HorizontalAlignment="Left" Width="160"/>
+            <Label Content="Genero" HorizontalAlignment="Left" Margin="315,19,0,0" VerticalAlignment="Top" Grid.RowSpan="2"/>
+            <Label Content="Raza" HorizontalAlignment="Left" Margin="314,56,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+            <Label Content="Especie" HorizontalAlignment="Left" Margin="315,121,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+            <TextBox x:Name="txtBuscar" Margin="518,23,0,0" VerticalAlignment="Top"  BorderBrush="Black" Background="{x:Null}" Grid.RowSpan="2" TextAlignment="Center" HorizontalAlignment="Left" Width="160"/>
+            <TextBox x:Name="txtId" HorizontalAlignment="Left" Margin="74,9,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="33" BorderBrush="{x:Null}" Background="{x:Null}" IsEnabled="False"/>
+            <Button x:Name="btnBuscar" Content="Buscar" Margin="518,36,0,0" Grid.Row="1" VerticalAlignment="Top" Height="33" Foreground="White" HorizontalAlignment="Left" Width="80">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF734AAB" Offset="0.761"/>
+                        <GradientStop Color="#FFE391F0" Offset="0.374"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btnReiniciar" Content="Reiniciar" Margin="616,35,0,0" Grid.Row="1" VerticalAlignment="Top" Height="33" Foreground="White" HorizontalAlignment="Left" Width="80">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF734AAB" Offset="0.761"/>
+                        <GradientStop Color="#FFE391F0" Offset="0.374"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btnGuardar" Content="Guardar" Margin="510,152,0,0" Grid.Row="1" VerticalAlignment="Top" Height="33" Foreground="White" HorizontalAlignment="Left" Width="80">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF734AAB" Offset="0.761"/>
+                        <GradientStop Color="#FFE391F0" Offset="0.374"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btnModificar" Content="Modificar" Margin="608,153,0,0" Grid.Row="1" VerticalAlignment="Top" Height="33" Foreground="White" HorizontalAlignment="Left" Width="80">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF734AAB" Offset="0.761"/>
+                        <GradientStop Color="#FFE391F0" Offset="0.374"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btnEliminar" Content="Eliminar" Margin="700,153,0,0" Grid.Row="1" VerticalAlignment="Top" Height="33" Foreground="White" HorizontalAlignment="Left" Width="80">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF734AAB" Offset="0.761"/>
+                        <GradientStop Color="#FFE391F0" Offset="0.374"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+        </Grid>
+    </Border>
+
 </Window>

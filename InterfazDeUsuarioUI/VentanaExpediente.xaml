@@ -6,28 +6,124 @@
         xmlns:local="clr-namespace:InterfazDeUsuarioUI"
         xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls" x:Class="InterfazDeUsuarioUI.VentanaExpediente"
         mc:Ignorable="d"
-        Title="VentanaExpediente" Height="450" Width="800">
-    <Grid>
-        <Label x:Name="lblNumCliente" Content="Num Cliente" HorizontalAlignment="Left" Margin="17,5,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="cbxNumCliente" HorizontalAlignment="Left" Margin="18,34,0,0" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="lblNumMascota" Content="Num Mascota" HorizontalAlignment="Left" Margin="19,61,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="cbxNumMascota" HorizontalAlignment="Left" Margin="19,94,0,0" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="lblEstado" Content="Estado" HorizontalAlignment="Left" Margin="19,122,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="cbxEstado" HorizontalAlignment="Left" Margin="19,149,0,0" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="lblId" Content="ID" HorizontalAlignment="Left" Margin="19,176,0,0" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtId" HorizontalAlignment="Left" Margin="19,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="120" Height="25"/>
-        <Label x:Name="lblNumCliente_Copiar" Content="Descripción Consulta" HorizontalAlignment="Left" Margin="201,5,0,0" VerticalAlignment="Top" Width="415"/>
-        <TextBox x:Name="txtDescripcionConsulta" HorizontalAlignment="Left" Margin="208,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="494" Height="25"/>
-        <Label x:Name="lblNumCliente_Copiar1" Content="Fecha de Atención" HorizontalAlignment="Left" Margin="208,63,0,0" VerticalAlignment="Top" Width="143"/>
-        <DatePicker x:Name="dpFechaAtencion" HorizontalAlignment="Left" Margin="208,89,0,0" VerticalAlignment="Top" Width="494"/>
-        <Label x:Name="lblNumCliente_Copiar2" Content="Buscar ID" HorizontalAlignment="Left" Margin="208,116,0,0" VerticalAlignment="Top" Width="143"/>
-        <TextBox x:Name="txtId_Copiar" HorizontalAlignment="Left" Margin="208,146,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="327" Height="25"/>
-        <Button x:Name="btnGuardar" Content="Guardar" HorizontalAlignment="Left" Margin="201,205,0,0" VerticalAlignment="Top" Height="32" Width="113"/>
-        <Button x:Name="btnModificar" Content="Modificar" HorizontalAlignment="Left" Margin="479,205,0,0" VerticalAlignment="Top" Height="32" Width="112"/>
-        <Button x:Name="btnEliminar" Content="Eliminar" HorizontalAlignment="Left" Margin="611,204,0,0" VerticalAlignment="Top" Height="34" Width="113"/>
-        <Button x:Name="btnReiniciar" Content="Reiniciar" HorizontalAlignment="Center" Margin="0,205,0,0" VerticalAlignment="Top" Height="34" Width="114"/>
-        <Button x:Name="btnBuscar" Content="Buscar" HorizontalAlignment="Left" Margin="548,144,0,0" VerticalAlignment="Top" Height="27" Width="154" RenderTransformOrigin="1.115,0.551"/>
-        <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,263,10,4"/>
+        Title="VentanaExpediente" Height="450" Width="800"                WindowStyle="None"
+Background="Transparent"
+AllowsTransparency="True"
+ResizeMode="NoResize"
+MouseDown="Window_MouseDown">
 
-    </Grid>
+    <Border CornerRadius="8 8 0 0"
+     BorderThickness="5 16 5 5"
+     RenderTransformOrigin="0.503,0.525">
+        <Border.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <LinearGradientBrush.RelativeTransform>
+                    <TransformGroup>
+                        <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                        <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                        <RotateTransform Angle="-29.932" CenterX="0.5" CenterY="0.5"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </LinearGradientBrush.RelativeTransform>
+                <GradientStop Color="White" Offset="0.662"/>
+            </LinearGradientBrush>
+        </Border.Background>
+
+        <Border.BorderBrush>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#FFBDF6" Offset="0"/>
+            </LinearGradientBrush>
+        </Border.BorderBrush>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="353*"/>
+                <ColumnDefinition Width="42*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Margin="0,-15,0,29" Grid.ColumnSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="624*"/>
+                    <ColumnDefinition Width="0*"/>
+                    <ColumnDefinition Width="0*"/>
+                  
+                    <ColumnDefinition Width="48"/>
+                    <ColumnDefinition Width="0"/>
+                    <ColumnDefinition Width="41"/>
+                    <ColumnDefinition Width="0"/>
+                    <ColumnDefinition Width="36"/>
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="btnMinimize"
+      Background="Transparent"
+      BorderThickness="0"
+      Content="-"
+      Foreground= "Black"
+      FontSize="30"
+      FontFamily="Montserrat"
+      Cursor="Hand"
+      Grid.Column="4"
+      Click="btnMinimize_Click"
+      HorizontalAlignment="Left" Width="47" Margin="10,-12,0,-12" Grid.ColumnSpan="3"/>
+
+
+
+                <Button x:Name="btnClose"
+      Background= "Transparent"
+      BorderThickness="0"
+      Content="X"
+      Foreground= "Black"
+      FontSize="12"
+      FontFamily="Montserrat"
+      Cursor="Hand"
+      Grid.Column="6"
+      Click="btnClose_Click" Margin="33,0,4,0" Grid.ColumnSpan="3"/>
+
+                <Button x:Name="btnMaximize"
+        Background="Transparent"
+        BorderThickness="0"
+        Content="⬜"
+        Foreground="Black"
+        FontSize="12"
+        FontFamily="Montserrat"
+        Cursor="Hand"
+        Grid.Column="4"
+        Click="btnMaximize_Click"
+        Margin="42,0,0,0" Grid.ColumnSpan="3"/>
+
+            </Grid>
+            <Label x:Name="lblNumCliente" Content="Num Cliente" HorizontalAlignment="Left" Height="23" Margin="18,5,0,0" Grid.Row="1" VerticalAlignment="Top" Width="78"/>
+            <ComboBox x:Name="cbxNumCliente" HorizontalAlignment="Left" Margin="20,38,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120"/>
+            <Label x:Name="lblNumMascota" Content="Num Mascota" HorizontalAlignment="Left" Height="23" Margin="15,66,0,0" Grid.Row="1" VerticalAlignment="Top" Width="90"/>
+            <ComboBox x:Name="cbxNumMascota" HorizontalAlignment="Left" Margin="19,93,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120"/>
+            <Label x:Name="lblEstado" Content="Estado" HorizontalAlignment="Left" Height="23" Margin="17,121,0,0" Grid.Row="1" VerticalAlignment="Top" Width="90"/>
+            <ComboBox x:Name="cbxEstado" HorizontalAlignment="Left" Margin="19,149,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120"/>
+            <Label x:Name="lblId" Content="ID" HorizontalAlignment="Left" Height="23" Margin="23,182,0,0" Grid.Row="1" VerticalAlignment="Top" Width="116"/>
+            <TextBox x:Name="txtId" HorizontalAlignment="Left" Margin="19,213,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="30"/>
+            <Label x:Name="lblDescripcionConsulta" Content="Descripción Consulta" HorizontalAlignment="Left" Height="31" Margin="230,1,0,0" Grid.Row="1" VerticalAlignment="Top" Width="266"/>
+            <TextBox x:Name="txtDescripcionConsulta" HorizontalAlignment="Left" Margin="234,37,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="462" Height="27"/>
+            <Label x:Name="lblFechaAtencion" Content="Fecha de Atención" HorizontalAlignment="Left" Height="31" Margin="233,67,0,0" Grid.Row="1" VerticalAlignment="Top" Width="266"/>
+            <DatePicker x:Name="dpFechaAtencion" HorizontalAlignment="Left" Margin="233,99,0,0" Grid.Row="1" VerticalAlignment="Top" Width="463" Height="33" RenderTransformOrigin="0.5,0.5">
+                <DatePicker.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.374"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </DatePicker.RenderTransform>
+            </DatePicker>
+            <Label x:Name="lblBuscarId" Content="Buscar ID" HorizontalAlignment="Left" Height="23" Margin="233,131,0,0" Grid.Row="1" VerticalAlignment="Top" Width="90"/>
+            <TextBox x:Name="txtBuscarId" HorizontalAlignment="Left" Margin="234,156,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="313" Height="28"/>
+            <Button x:Name="btnGuardar" Content="Guardar" HorizontalAlignment="Left" Margin="234,209,0,0" Grid.Row="1" VerticalAlignment="Top" Height="35" Width="105"/>
+            <Button x:Name="btnModificar" Content="Modificar" HorizontalAlignment="Left" Margin="498,207,0,0" Grid.Row="1" VerticalAlignment="Top" Height="35" Width="110"/>
+            <Button x:Name="btnEliminar" Content="Eliminar" HorizontalAlignment="Left" Margin="639,207,0,0" Grid.Row="1" VerticalAlignment="Top" Height="36" Width="116" Grid.ColumnSpan="2"/>
+            <Button x:Name="btnReiniciar" Content="Reiniciar" HorizontalAlignment="Left" Margin="363,206,0,0" Grid.Row="1" VerticalAlignment="Top" Height="36" Width="114"/>
+            <Button x:Name="btnBuscar" Content="Buscar" HorizontalAlignment="Left" Margin="564,156,0,0" Grid.Row="1" VerticalAlignment="Top" Height="28" Width="149" Grid.ColumnSpan="2"/>
+            <DataGrid Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,260,0,12" Grid.ColumnSpan="2"/>
+        </Grid>
+    </Border>
+
 </Window>

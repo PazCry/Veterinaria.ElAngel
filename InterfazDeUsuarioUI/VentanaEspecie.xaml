@@ -5,8 +5,125 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:InterfazDeUsuarioUI"
         mc:Ignorable="d"
-        Title="VentanaEspecie" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="VentanaEspecie" Height="450" Width="800"                WindowStyle="None"
+Background="Transparent"
+AllowsTransparency="True"
+ResizeMode="NoResize"
+MouseDown="Window_MouseDown">
+
+    <Border CornerRadius="8 8 0 0"
+     BorderThickness="5 16 5 5"
+     RenderTransformOrigin="0.503,0.525" Margin="504,0,-115,84">
+        <Border.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <LinearGradientBrush.RelativeTransform>
+                    <TransformGroup>
+                        <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                        <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                        <RotateTransform Angle="-29.932" CenterX="0.5" CenterY="0.5"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </LinearGradientBrush.RelativeTransform>
+                <GradientStop Color="White" Offset="0.662"/>
+            </LinearGradientBrush>
+        </Border.Background>
+
+        <Border.BorderBrush>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#FFBDF6" Offset="0"/>
+            </LinearGradientBrush>
+        </Border.BorderBrush>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="37*"/>
+                <ColumnDefinition Width="669*"/>
+                <ColumnDefinition Width="84*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Margin="0,-15,0,29" Grid.ColumnSpan="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="624*"/>
+                    <ColumnDefinition Width="0*"/>
+                    <ColumnDefinition Width="0*"/>
+                    <ColumnDefinition Width="47*"/>
+                    <ColumnDefinition Width="48"/>
+                    <ColumnDefinition Width="0"/>
+                    <ColumnDefinition Width="41"/>
+                    <ColumnDefinition Width="0"/>
+                    <ColumnDefinition Width="36"/>
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="btnMinimize"
+      Background="Transparent"
+      BorderThickness="0"
+      Content="-"
+      Foreground= "Black"
+      FontSize="30"
+      FontFamily="Montserrat"
+      Cursor="Hand"
+      Grid.Column="4"
+      Click="btnMinimize_Click"
+      HorizontalAlignment="Left" Width="47" Margin="10,-12,0,-12" Grid.ColumnSpan="3"/>
+
+
+
+                <Button x:Name="btnClose"
+      Background= "Transparent"
+      BorderThickness="0"
+      Content="X"
+      Foreground= "Black"
+      FontSize="12"
+      FontFamily="Montserrat"
+      Cursor="Hand"
+      Grid.Column="6"
+      Click="btnClose_Click" Margin="33,0,4,0" Grid.ColumnSpan="3"/>
+
+                <Button x:Name="btnMaximize"
+        Background="Transparent"
+        BorderThickness="0"
+        Content="⬜"
+        Foreground="Black"
+        FontSize="12"
+        FontFamily="Montserrat"
+        Cursor="Hand"
+        Grid.Column="4"
+        Click="btnMaximize_Click"
+        Margin="42,0,0,0" Grid.ColumnSpan="3"/>
+
+            </Grid>
+            <Label Content="Especie" HorizontalAlignment="Left" Margin="5,-20,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+            <DataGrid Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,130,0,10" Grid.ColumnSpan="3"/>
+            <TextBox x:Name="txtId" HorizontalAlignment="Left" Margin="17,0,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="39" Background="{x:Null}" BorderBrush="{x:Null}" Grid.Column="1" IsEnabled="False"/>
+            <TextBox x:Name="txtTipoespecie" HorizontalAlignment="Left" Margin="59,55,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="270" Background="{x:Null}" BorderBrush="Black" Grid.Column="1"/>
+            <Label Grid.Column="1" Content="Tipo de Especie" HorizontalAlignment="Left" Margin="135,10,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+            <Button Grid.Column="1" Content="Guardar" HorizontalAlignment="Left" Margin="36,88,0,0" VerticalAlignment="Top" Height="33" Width="88" Foreground="#FFF8EAEA" Grid.Row="1">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="1"/>
+                        <GradientStop Color="#FFDE6AF0" Offset="0.561"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button Grid.Column="1" Content="Modificar" Margin="160,88,0,0" Grid.Row="1" VerticalAlignment="Top" Height="33" Foreground="#FFF8EAEA" HorizontalAlignment="Left" Width="88">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="1"/>
+                        <GradientStop Color="#FFDE6AF0" Offset="0.561"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button Grid.Column="1" Content="Eliminar" HorizontalAlignment="Left" Margin="273,88,0,0" VerticalAlignment="Top" Height="33" Width="88" Grid.ColumnSpan="2" Foreground="#FFF8EAEA" Grid.Row="1">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="1"/>
+                        <GradientStop Color="#FFDE6AF0" Offset="0.561"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+        </Grid>
+    </Border>
+ 
 </Window>
