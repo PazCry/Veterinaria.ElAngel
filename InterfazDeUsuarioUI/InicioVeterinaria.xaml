@@ -179,6 +179,15 @@
                             </StackPanel>
                         </Button>
 
+                        <!-- Citas Calendario -->
+                        <Button Style="{StaticResource SidebarButtonStyle}"
+                               Click="Citas_Click">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="📅" Style="{StaticResource SidebarIconStyle}"/>
+                                <TextBlock Text="Calendario de Citas" Style="{StaticResource SidebarTextStyle}"/>
+                            </StackPanel>
+                        </Button>
+
                         <!-- Historial Médico / Expedientes -->
                         <Button Style="{StaticResource SidebarButtonStyle}"
                          Click="Historial_Click">
@@ -310,13 +319,7 @@
                         <StackPanel Orientation="Horizontal" 
                             Margin="0,20,0,0">
 
-                            <!-- Card 1 -->
-
-                            <!-- Card 2 -->
-
-                            <!-- Card 3 -->
-
-                            <!-- Card 4 -->
+                           
                         </StackPanel>
                     </StackPanel>
                 </Grid>

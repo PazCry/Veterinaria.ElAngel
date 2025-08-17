@@ -48,7 +48,7 @@ MouseDown="Window_MouseDown">
                     <ColumnDefinition Width="624*"/>
                     <ColumnDefinition Width="0*"/>
                     <ColumnDefinition Width="0*"/>
-                  
+
                     <ColumnDefinition Width="48"/>
                     <ColumnDefinition Width="0"/>
                     <ColumnDefinition Width="41"/>
@@ -117,12 +117,52 @@ MouseDown="Window_MouseDown">
             </DatePicker>
             <Label x:Name="lblBuscarId" Content="Buscar ID" HorizontalAlignment="Left" Height="23" Margin="233,131,0,0" Grid.Row="1" VerticalAlignment="Top" Width="90"/>
             <TextBox x:Name="txtBuscarId" HorizontalAlignment="Left" Margin="234,156,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="313" Height="28"/>
-            <Button x:Name="btnGuardar" Content="Guardar" HorizontalAlignment="Left" Margin="234,209,0,0" Grid.Row="1" VerticalAlignment="Top" Height="35" Width="105"/>
-            <Button x:Name="btnModificar" Content="Modificar" HorizontalAlignment="Left" Margin="498,207,0,0" Grid.Row="1" VerticalAlignment="Top" Height="35" Width="110"/>
-            <Button x:Name="btnEliminar" Content="Eliminar" HorizontalAlignment="Left" Margin="639,207,0,0" Grid.Row="1" VerticalAlignment="Top" Height="36" Width="116" Grid.ColumnSpan="2"/>
-            <Button x:Name="btnReiniciar" Content="Reiniciar" HorizontalAlignment="Left" Margin="363,206,0,0" Grid.Row="1" VerticalAlignment="Top" Height="36" Width="114"/>
-            <Button x:Name="btnBuscar" Content="Buscar" HorizontalAlignment="Left" Margin="564,156,0,0" Grid.Row="1" VerticalAlignment="Top" Height="28" Width="149" Grid.ColumnSpan="2"/>
+            <Button x:Name="btnReiniciar" Content="Reiniciar" HorizontalAlignment="Left" Margin="344,214,0,0" Grid.Row="1" VerticalAlignment="Top" Height="29" Width="91"/>
             <DataGrid Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,260,0,0" Grid.ColumnSpan="2"/>
+
+            <Button x:Name="btnBuscar"
+         Content="🔍 Buscar" 
+         Foreground="White" Margin="583,155,30,0" Height="30" VerticalAlignment="Top" Grid.Row="1">
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#74B9FF" Offset="0"/>
+                        <GradientStop Color="#0984E3" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+
+            <Button x:Name="btnModificar"
+        Content="✏ Modificar" 
+        Foreground="White" Margin="564,213,62,156" Grid.Row="1">
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#FDCB6E" Offset="0"/>
+                        <GradientStop Color="#E17055" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+
+            <Button x:Name="btnGuardar"
+          Content="💾 Guardar" 
+          Foreground="White" Margin="465,213,165,156" Grid.Row="1">
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#00CEC9" Offset="0"/>
+                        <GradientStop Color="#00B894" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+
+            <Button x:Name="btnEliminar"
+         Content="🗑 Eliminar"
+         Foreground="White" Margin="664,214,42,155" Grid.Row="1" Grid.ColumnSpan="2">
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#FD79A8" Offset="0"/>
+                        <GradientStop Color="#E84393" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
         </Grid>
     </Border>
 

@@ -99,27 +99,35 @@ MouseDown="Window_MouseDown">
             <DataGrid Grid.Row="2" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.ColumnSpan="2" Margin="0,13,0,-15"/>
             <TextBox x:Name="TxtTipoGenero" HorizontalAlignment="Left" Margin="33,36,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="375" Background="{x:Null}" BorderBrush="Black" Grid.ColumnSpan="2"/>
             <TextBox x:Name="txtId" HorizontalAlignment="Left" Margin="42,0,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" Background="{x:Null}" BorderBrush="{x:Null}"/>
-            <Button Content="Guardar" HorizontalAlignment="Left" Margin="68,94,0,0" Grid.Row="1" VerticalAlignment="Top" Height="33" Width="109" Foreground="#FFEDE8E8" RenderTransformOrigin="-0.275,0.545">
+
+            <Button x:Name="btnGuardar"
+          Content="💾 Guardar" 
+          Foreground="White" Margin="42,87,512,25" Grid.Row="1">
                 <Button.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="Black" Offset="1"/>
-                        <GradientStop Color="#FFD49EDF" Offset="0.35"/>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#00CEC9" Offset="0"/>
+                        <GradientStop Color="#00B894" Offset="1"/>
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <Button Content="Modificar" HorizontalAlignment="Left" Margin="323,94,0,0" Grid.Row="1" VerticalAlignment="Top" Height="33" Width="111" Foreground="#FFEDE8E8">
+            <Button x:Name="btnEliminar"
+         Content="🗑 Eliminar" 
+         Foreground="White" Margin="256,87,298,25" Grid.Row="1">
                 <Button.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="Black" Offset="1"/>
-                        <GradientStop Color="#FFD49EDF" Offset="0.35"/>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#FD79A8" Offset="0"/>
+                        <GradientStop Color="#E84393" Offset="1"/>
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <Button Content="Elimiinar" HorizontalAlignment="Left" Margin="591,94,0,0" Grid.Row="1" VerticalAlignment="Top" Height="33" Width="115" Foreground="#FFEDE8E8">
+
+            <Button x:Name="btnModificar"
+        Content="✏ Modificar" 
+        Foreground="White" Margin="473,87,81,25" Grid.Row="1">
                 <Button.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="Black" Offset="1"/>
-                        <GradientStop Color="#FFD49EDF" Offset="0.35"/>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#FDCB6E" Offset="0"/>
+                        <GradientStop Color="#E17055" Offset="1"/>
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
