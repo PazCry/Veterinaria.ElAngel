@@ -13,7 +13,7 @@ MouseDown="Window_MouseDown">
 
     <Border CornerRadius="8 8 0 0"
      BorderThickness="5 16 5 5"
-     RenderTransformOrigin="0.503,0.525" Margin="364,0,0,-41">
+     RenderTransformOrigin="0.503,0.525">
         <Border.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                 <LinearGradientBrush.RelativeTransform>
@@ -33,14 +33,15 @@ MouseDown="Window_MouseDown">
                 <GradientStop Color="#FFBDF6" Offset="0"/>
             </LinearGradientBrush>
         </Border.BorderBrush>
-        <Grid>
+        <Grid Margin="0,0,0,15">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="353*"/>
                 <ColumnDefinition Width="42*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="30"/>
-                <RowDefinition/>
+                <RowDefinition Height="163*"/>
+                <RowDefinition Height="277*"/>
             </Grid.RowDefinitions>
             <Grid Margin="0,-15,0,29" Grid.ColumnSpan="2">
                 <Grid.ColumnDefinitions>
@@ -95,10 +96,10 @@ MouseDown="Window_MouseDown">
             </Grid>
             <Label Content="Genero" HorizontalAlignment="Left" Margin="4,-21,0,0" VerticalAlignment="Top"/>
             <Label Content="Tipo de Genero" HorizontalAlignment="Left" Margin="168,7,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="14"/>
-            <DataGrid Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.ColumnSpan="2" Margin="0,155,0,10"/>
+            <DataGrid Grid.Row="2" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.ColumnSpan="2" Margin="0,13,0,-15"/>
             <TextBox x:Name="TxtTipoGenero" HorizontalAlignment="Left" Margin="33,36,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="375" Background="{x:Null}" BorderBrush="Black" Grid.ColumnSpan="2"/>
             <TextBox x:Name="txtId" HorizontalAlignment="Left" Margin="42,0,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" Background="{x:Null}" BorderBrush="{x:Null}"/>
-            <Button Content="Guardar" HorizontalAlignment="Left" Margin="42,99,0,0" Grid.Row="1" VerticalAlignment="Top" Height="33" Width="80" Foreground="#FFEDE8E8">
+            <Button Content="Guardar" HorizontalAlignment="Left" Margin="68,94,0,0" Grid.Row="1" VerticalAlignment="Top" Height="33" Width="109" Foreground="#FFEDE8E8" RenderTransformOrigin="-0.275,0.545">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="Black" Offset="1"/>
@@ -106,7 +107,7 @@ MouseDown="Window_MouseDown">
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <Button Content="Modificar" HorizontalAlignment="Left" Margin="190,99,0,0" Grid.Row="1" VerticalAlignment="Top" Height="33" Width="80" Foreground="#FFEDE8E8">
+            <Button Content="Modificar" HorizontalAlignment="Left" Margin="323,94,0,0" Grid.Row="1" VerticalAlignment="Top" Height="33" Width="111" Foreground="#FFEDE8E8">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="Black" Offset="1"/>
@@ -114,7 +115,7 @@ MouseDown="Window_MouseDown">
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <Button Content="Elimiinar" HorizontalAlignment="Left" Margin="323,99,0,0" Grid.Row="1" VerticalAlignment="Top" Height="33" Width="80" Foreground="#FFEDE8E8" Grid.ColumnSpan="2">
+            <Button Content="Elimiinar" HorizontalAlignment="Left" Margin="591,94,0,0" Grid.Row="1" VerticalAlignment="Top" Height="33" Width="115" Foreground="#FFEDE8E8">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="Black" Offset="1"/>

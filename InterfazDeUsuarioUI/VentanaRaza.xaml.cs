@@ -44,5 +44,7 @@ namespace InterfazDeUsuarioUI
             else
                 this.WindowState = WindowState.Normal;
         }
+
+       
     }
 }
