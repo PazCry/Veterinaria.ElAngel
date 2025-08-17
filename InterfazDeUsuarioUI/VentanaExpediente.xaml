@@ -1,12 +1,33 @@
-﻿<Window x:Class="InterfazDeUsuarioUI.VentanaExpediente"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:InterfazDeUsuarioUI"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls" x:Class="InterfazDeUsuarioUI.VentanaExpediente"
         mc:Ignorable="d"
         Title="VentanaExpediente" Height="450" Width="800">
     <Grid>
-        
+        <Label x:Name="lblNumCliente" Content="Num Cliente" HorizontalAlignment="Left" Margin="17,5,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="cbxNumCliente" HorizontalAlignment="Left" Margin="18,34,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="lblNumMascota" Content="Num Mascota" HorizontalAlignment="Left" Margin="19,61,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="cbxNumMascota" HorizontalAlignment="Left" Margin="19,94,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="lblEstado" Content="Estado" HorizontalAlignment="Left" Margin="19,122,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="cbxEstado" HorizontalAlignment="Left" Margin="19,149,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="lblId" Content="ID" HorizontalAlignment="Left" Margin="19,176,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtId" HorizontalAlignment="Left" Margin="19,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="120" Height="25"/>
+        <Label x:Name="lblNumCliente_Copiar" Content="Descripción Consulta" HorizontalAlignment="Left" Margin="201,5,0,0" VerticalAlignment="Top" Width="415"/>
+        <TextBox x:Name="txtDescripcionConsulta" HorizontalAlignment="Left" Margin="208,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="494" Height="25"/>
+        <Label x:Name="lblNumCliente_Copiar1" Content="Fecha de Atención" HorizontalAlignment="Left" Margin="208,63,0,0" VerticalAlignment="Top" Width="143"/>
+        <DatePicker x:Name="dpFechaAtencion" HorizontalAlignment="Left" Margin="208,89,0,0" VerticalAlignment="Top" Width="494"/>
+        <Label x:Name="lblNumCliente_Copiar2" Content="Buscar ID" HorizontalAlignment="Left" Margin="208,116,0,0" VerticalAlignment="Top" Width="143"/>
+        <TextBox x:Name="txtId_Copiar" HorizontalAlignment="Left" Margin="208,146,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="327" Height="25"/>
+        <Button x:Name="btnGuardar" Content="Guardar" HorizontalAlignment="Left" Margin="201,205,0,0" VerticalAlignment="Top" Height="32" Width="113"/>
+        <Button x:Name="btnModificar" Content="Modificar" HorizontalAlignment="Left" Margin="479,205,0,0" VerticalAlignment="Top" Height="32" Width="112"/>
+        <Button x:Name="btnEliminar" Content="Eliminar" HorizontalAlignment="Left" Margin="611,204,0,0" VerticalAlignment="Top" Height="34" Width="113"/>
+        <Button x:Name="btnReiniciar" Content="Reiniciar" HorizontalAlignment="Center" Margin="0,205,0,0" VerticalAlignment="Top" Height="34" Width="114"/>
+        <Button x:Name="btnBuscar" Content="Buscar" HorizontalAlignment="Left" Margin="548,144,0,0" VerticalAlignment="Top" Height="27" Width="154" RenderTransformOrigin="1.115,0.551"/>
+        <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,263,10,4"/>
+
     </Grid>
 </Window>
