@@ -102,7 +102,7 @@
         </Grid.ColumnDefinitions>
 
         <!-- ========== SIDEBAR IZQUIERDO ========== -->
-        <Border Grid.Column="0" Background="{StaticResource SidebarBackground}">
+        <Border Grid.Column="0" Background="Purple">
             <!-- Efecto de sombra -->
             <Border.Effect>
                 <DropShadowEffect Color="Black" BlurRadius="10" ShadowDepth="2" Opacity="0.3"/>
