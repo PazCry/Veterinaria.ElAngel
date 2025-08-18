@@ -101,7 +101,7 @@ MouseDown="Window_MouseDown">
                     <TransformGroup>
                         <ScaleTransform/>
                         <SkewTransform/>
-                        <RotateTransform Angle="0.404"/>
+                        <RotateTransform Angle="0.187"/>
                         <TranslateTransform/>
                     </TransformGroup>
                 </DataGrid.RenderTransform>

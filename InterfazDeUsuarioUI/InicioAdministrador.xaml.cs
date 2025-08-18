@@ -23,26 +23,73 @@ namespace InterfazDeUsuarioUI
         {
             InitializeComponent();
         }
-        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        // Método para el DataGrid SelectionChanged
+        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            DataGrid dataGrid = sender as DataGrid;
 
+            if (dataGrid.SelectedItem != null)
+            {
+                // Procesar elemento seleccionado
+                var itemSeleccionado = dataGrid.SelectedItem;
+
+                // Si tienes una clase Raza, puedes hacer:
+                // Raza razaSeleccionada = itemSeleccionado as Raza;
+                // if (razaSeleccionada != null)
+                // {
+                //     txtId.Text = razaSeleccionada.Id.ToString();
+                //     // Llenar otros campos
+                // }
+            }
+        }
+
+        // Método para mover la ventana
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed)
-                DragMove();
+            {
+                this.DragMove();
+            }
         }
-        private void btnMinimize_Click(object sender, RoutedEventArgs e)
-        {
-            WindowState = WindowState.Minimized;
-        }
+
+        // Botones de la barra de título
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.Shutdown();
+            this.Close();
         }
+
         private void btnMaximize_Click(object sender, RoutedEventArgs e)
         {
             if (this.WindowState == WindowState.Normal)
+            {
                 this.WindowState = WindowState.Maximized;
+            }
             else
+            {
                 this.WindowState = WindowState.Normal;
+            }
         }
+
+        private void btnMinimize_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
+
+        // Event handlers para los botones de funcionalidad
+        private void btnGuardar_Click(object sender, RoutedEventArgs e)
+        {
+            // Lógica para guardar raza
+        }
+
+        private void btnModificar_Click(object sender, RoutedEventArgs e)
+        {
+            // Lógica para modificar raza
+        }
+
+        private void btnEliminar_Click(object sender, RoutedEventArgs e)
+        {
+            // Lógica para eliminar raza
+        }
+
     }
 }

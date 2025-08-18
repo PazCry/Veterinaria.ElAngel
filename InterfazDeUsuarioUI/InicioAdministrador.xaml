@@ -102,7 +102,7 @@
         </Grid.ColumnDefinitions>
 
         <!-- ========== SIDEBAR IZQUIERDO ========== -->
-        <Border Grid.Column="0" Background="Purple">
+        <Border Grid.Column="0" Background="#1F2024">
             <!-- Efecto de sombra -->
             <Border.Effect>
                 <DropShadowEffect Color="Black" BlurRadius="10" ShadowDepth="2" Opacity="0.3"/>
@@ -200,7 +200,7 @@
                         <!-- Separador -->
                         <Rectangle Style="{StaticResource SidebarSeparatorStyle}"/>
 
-                      
+
                         <!-- Especies -->
                         <Button Style="{StaticResource SidebarButtonStyle}"
                              Click="Especies_Click">
@@ -228,7 +228,7 @@
                             </StackPanel>
                         </Button>
 
-                       
+
                         <!-- Separador -->
                         <Rectangle Style="{StaticResource SidebarSeparatorStyle}"/>
 
@@ -369,7 +369,7 @@
                         <StackPanel Orientation="Horizontal" 
                                 Margin="0,20,0,0">
 
-                          
+
                         </StackPanel>
                     </StackPanel>
                 </Grid>

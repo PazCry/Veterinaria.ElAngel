@@ -44,5 +44,22 @@ namespace InterfazDeUsuarioUI
             else
                 this.WindowState = WindowState.Normal;
         }
+        private void CerrarSesion_Click(object sender, RoutedEventArgs e)
+        {
+            var resultado = MessageBox.Show(
+                "¿Está seguro que desea cerrar sesión?",
+                "Confirmar",
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Question);
+
+            if (resultado == MessageBoxResult.Yes)
+            {
+                var login = new Login();
+                login.Show();
+                this.Close();
+            }
+        }
+
     }
 }
+
